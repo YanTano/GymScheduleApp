@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // Firebase configuration object
 const firebaseConfig = {
   apiKey: "AIzaSyAS7gU_hxP7wg-o9U-yuOG7DBvSGX-nmho",
@@ -10,8 +12,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const db = firebase.firestore(app);
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Get references to DOM elements
 const workoutForm = document.getElementById('workout-form');
