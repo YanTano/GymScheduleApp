@@ -12,7 +12,7 @@ function addWorkoutToSchedule(name, date, duration) {
     row.innerHTML = `
         <td>${name}</td>
         <td>${date}</td>
-        <td>${duration} min</td>
+        <td>${duration} hours</td>
     `;
 
     scheduleTableBody.appendChild(row);
