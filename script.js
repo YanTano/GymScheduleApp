@@ -1,24 +1,15 @@
-// Import Firebase and Firestore functions
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
-// Firebase configuration object
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAS7gU_hxP7wg-o9U-yuOG7DBvSGX-nmho",
-  authDomain: "test-bb3a7.firebaseapp.com",
-  projectId: "test-bb3a7",
-  storageBucket: "test-bb3a7.firebasestorage.app",
-  messagingSenderId: "827643014422",
-  appId: "1:827643014422:web:88f632db76145f2ce37437",
-  measurementId: "G-F0WHHE0754"
+  apiKey: "AIzaSyBGjuBH1RPOJpYVYnCHOHE9fviee6jsXBM",
+  authDomain: "gym-schedule-plan.firebaseapp.com",
+  projectId: "gym-schedule-plan",
+  storageBucket: "gym-schedule-plan.firebasestorage.app",
+  messagingSenderId: "159265115144",
+  appId: "1:159265115144:web:0a0dbd063dc2235b8215bd",
+  measurementId: "G-TQ53SX12VY"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
-const db = getFirestore(app);
-
 // Get references to DOM elements
 const workoutForm = document.getElementById('workout-form');
 const workoutNameInput = document.getElementById('workout-name');
