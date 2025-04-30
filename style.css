@@ -54,11 +54,13 @@ table {
 
 table, th, td {
     border: 1px solid #fff;
+    background-color: #fff;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    color: #fff;
 }
 
 @media screen and (max-width: 600px) {
