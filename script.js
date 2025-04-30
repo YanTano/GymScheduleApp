@@ -42,14 +42,40 @@ workoutForm.addEventListener('submit', function(event) {
     const workoutDuration = workoutDurationInput.value;
 
     if (workoutName && workoutDate && workoutDuration) {
-        addWorkoutToSchedule(workoutName, workoutDate, workoutDuration);
+        // Save workout to Firestore
+        db.collection('workouts').add({
+            name: workoutName,
+            date: workoutDate,
+            duration: workoutDuration
+        }).then(() => {
+            // After successful addition, load the workouts
+            loadWorkouts();
 
-        // Clear the form inputs
-        workoutNameInput.value = '';
-        workoutDateInput.value = '';
-        workoutDurationInput.value = '';
+            // Clear the form inputs
+            workoutNameInput.value = '';
+            workoutDateInput.value = '';
+            workoutDurationInput.value = '';
+        }).catch((error) => {
+            console.error("Error adding workout: ", error);
+        });
     }
 });
+
+// Function to load workouts from Firestore
+function loadWorkouts() {
+    // Clear the table first
+    scheduleTableBody.innerHTML = '';
+
+    // Fetch workouts from Firestore
+    db.collection('workouts').get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+            const workout = doc.data();
+            addWorkoutToSchedule(workout.name, workout.date, workout.duration);
+        });
+    }).catch((error) => {
+        console.error("Error loading workouts: ", error);
+    });
+}
 
 // Load workouts when the page loads
 loadWorkouts();
