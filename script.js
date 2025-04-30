@@ -1,4 +1,5 @@
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics"
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -10,6 +11,10 @@ const firebaseConfig = {
   appId: "1:159265115144:web:0a0dbd063dc2235b8215bd",
   measurementId: "G-TQ53SX12VY"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 // Get references to DOM elements
 const workoutForm = document.getElementById('workout-form');
 const workoutNameInput = document.getElementById('workout-name');
