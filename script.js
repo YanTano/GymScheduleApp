@@ -84,3 +84,11 @@ async function loadWorkouts() {
 
 // Load workouts when the page loads
 loadWorkouts();
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
