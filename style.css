@@ -60,7 +60,6 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: left;
-    color: #fff;
 }
 
 @media screen and (max-width: 600px) {
