@@ -1,0 +1,71 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+h2 {
+    color: #333;
+}
+
+form input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    background-color: #5C6BC0;
+    color: white;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f51b5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    form input {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
