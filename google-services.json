@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "159265115144",
+    "project_id": "gym-schedule-plan",
+    "storage_bucket": "gym-schedule-plan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159265115144:android:f8e1c4c00b08b9158215bd",
+        "android_client_info": {
+          "package_name": "Mygym.schedule12"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB92BbUynqj7NSrLN2Gy-yCCnb58YnQuKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
