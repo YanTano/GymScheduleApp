@@ -12,6 +12,7 @@ const firebaseConfig = {
   measurementId: "G-TQ53SX12VY"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -92,6 +93,46 @@ service cloud.firestore {
     }
   }
 }
+      import firestore from '@react-native-firebase/firestore';
+
+// Example to add data
+firestore()
+  .collection('schedules')
+  .add({
+    title: 'Yoga Class',
+    time: '10:00 AM',
+    location: 'Room 1',
+  })
+  .then(() => {
+    console.log('Schedule added!');
+  });
+firestore()
+  .collection('schedules')
+  .get()
+  .then(querySnapshot => {
+    querySnapshot.forEach(documentSnapshot => {
+      console.log(documentSnapshot.id, documentSnapshot.data());
+    });
+  });
+import database from '@react-native-firebase/database';
+
+// Example to set data
+database()
+  .ref('/schedules')
+  .set({
+    title: 'Yoga Class',
+    time: '10:00 AM',
+    location: 'Room 1',
+  });
+
+// Fetch data
+database()
+  .ref('/schedules')
+  .once('value')
+  .then(snapshot => {
+    console.log(snapshot.val());
+  });
+
 plugins {
   // ...
 
@@ -120,3 +161,11 @@ plugins {
   // Add the dependencies for any other desired Firebase products
   // https://firebase.google.com/docs/android/setup#available-libraries
 }
+    service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+
